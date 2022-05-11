@@ -16,10 +16,8 @@ def finches_index(request):
 
 def finches_detail(request, finch_id):
   finch = Finch.objects.get(id=finch_id)
-  # instantiate FeedingForm to be rendered in the template
   feeding_form = FeedingForm()
   return render(request, 'finches/detail.html', {
-    # include the cat and feeding_form in the context
     'finch': finch, 'feeding_form': feeding_form
   })
 
